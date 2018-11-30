@@ -1,0 +1,13 @@
+[Unit]
+Description=the edge gateway
+
+[Service]
+User=pi
+Group=sudo
+WorkingDirectory=/opt/edge-gateway/bin/
+ExecStart=/opt/edge-gateway/bin/start.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
