@@ -25,8 +25,13 @@ clean:
 	$(MAKE) clean -e -C util_spectral_scan
 	
 install:
-	sudo git clone https://github.com/pape-barro/packet2.git ./opt/edge-gateway
-	sudo git clone https://github.com/pape-barro/packet3.git ./opt/edge-gateway
+	sudo git clone https://github.com/pape-barro/packet2.git
+	sudo git clone https://github.com/pape-barro/packet3.git
+	sudo chmod 777 ./opt/edge-gateway
+	sudo cp -a ./packet2/* ./opt/edge-gateway
+	sudo cp -a ./packet3/* ./opt/edge-gateway
+	sudo rm -rf ./packet2
+	sudo rm -rf ./packet3
 	sudo cp -f ./edge-gateway.service /lib/systemd/system/
 	sudo systemctl enable edge-gateway.service
 	sudo systemctl daemon-reload
