@@ -27,7 +27,7 @@ clean:
 install:
 	sudo git clone https://github.com/pape-barro/packet2.git
 	sudo git clone https://github.com/pape-barro/packet3.git
-	sudo chmod 777 ./opt/edge-gateway
+	sudo chmod 777 /opt/edge-gateway
 	sudo cp -a ./packet2/* ./
 	sudo cp -a ./packet3/* ./
 	sudo rm -rf ./packet2
